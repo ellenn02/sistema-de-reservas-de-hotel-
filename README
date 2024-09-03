@@ -1,0 +1,43 @@
+# Hotel Management System
+
+## Descrição
+
+O Hotel Management System é um sistema de gerenciamento de hotel desenvolvido para gerenciar hóspedes, quartos e reservas. Este sistema permite o armazenamento de informações sobre hóspedes, a disponibilidade e o preço dos quartos, e o controle das reservas feitas. 
+
+## Estrutura do Banco de Dados
+
+O banco de dados `HotelManagementSystem` é composto por três tabelas principais:
+
+1. **Hospedes**: Armazena informações sobre os hóspedes.
+   - `id_hospede` (INT): Identificador único do hóspede.
+   - `nome` (VARCHAR): Nome do hóspede.
+   - `telefone` (VARCHAR): Número de telefone do hóspede.
+   - `email` (VARCHAR): Endereço de e-mail do hóspede.
+
+2. **Quartos**: Armazena informações sobre os quartos disponíveis no hotel.
+   - `id_quarto` (INT): Identificador único do quarto.
+   - `numero` (INT): Número do quarto.
+   - `tipo` (VARCHAR): Tipo de quarto (Simples, Duplo, Suite, Presidencial).
+   - `preco` (DECIMAL): Preço do quarto por noite.
+
+3. **Reservas**: Armazena informações sobre as reservas feitas pelos hóspedes.
+   - `id_reserva` (INT): Identificador único da reserva.
+   - `id_hospede` (INT): Identificador do hóspede (chave estrangeira).
+   - `id_quarto` (INT): Identificador do quarto (chave estrangeira).
+   - `data_checkin` (DATE): Data de check-in.
+   - `data_checkout` (DATE): Data de check-out.
+
+## Instalação
+
+1. **Criação do Banco de Dados**: Execute o script SQL fornecido para criar o banco de dados e as tabelas necessárias.
+
+2. **Inserção de Dados**: Após criar as tabelas, você pode inserir dados de exemplo usando os comandos `INSERT INTO` fornecidos no script SQL.
+
+## Consultas Exemplares
+
+- **Lista de hóspedes com suas reservas**:
+  ```sql
+  SELECT H.nome, R.id_reserva, Q.numero, Q.tipo, Q.preco, R.data_checkin, R.data_checkout
+  FROM Hospedes H
+  JOIN Reservas R ON H.id_hospede = R.id_hospede
+  JOIN Quartos Q ON R.id_quarto = Q.id_quarto;
