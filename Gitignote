@@ -1,0 +1,53 @@
+
+### .gitignore
+
+```gitignore
+# Ignorar arquivos de log
+*.log
+
+# Ignorar arquivos temporários
+*.tmp
+
+# Ignorar arquivos de banco de dados
+*.sql
+
+# Ignorar arquivos de backup
+*.bak
+
+# Ignorar arquivos de configuração local
+config/
+
+# Ignorar arquivos de IDEs
+.idea/
+.vscode/
+.DS_Store
+
+Enunciado: Sistema de Gerenciamento de Hotel
+Objetivo
+Desenvolver um sistema de gerenciamento para um hotel que permita o controle de hóspedes, quartos e reservas. O sistema deve ser capaz de armazenar informações sobre hóspedes, disponibilidades e preços dos quartos, além de gerenciar reservas.
+
+Requisitos
+Criação do Banco de Dados:
+
+O banco de dados deve ser criado com o nome HotelManagementSystem.
+Tabelas:
+
+Hospedes: Deve armazenar informações dos hóspedes com os campos id_hospede, nome, telefone e email.
+Quartos: Deve armazenar informações dos quartos com os campos id_quarto, numero, tipo e preco.
+Reservas: Deve armazenar informações das reservas com os campos id_reserva, id_hospede, id_quarto, data_checkin e data_checkout. Deve haver relacionamentos de chave estrangeira entre as tabelas.
+Operações:
+
+Inserir Dados: Dados de exemplo para hóspedes, quartos e reservas devem ser inseridos.
+Consultar Dados: Deve ser possível listar hóspedes com suas reservas e consultar quartos disponíveis em um período específico.
+Atualizar Dados: Permitir a atualização de informações de hóspedes e preços de quartos.
+Excluir Dados: Permitir a exclusão de reservas e hóspedes, com a remoção de suas reservas associadas.
+Consultas SQL:
+
+Deve ser capaz de gerar relatórios e consultas que mostram as reservas de hóspedes e a disponibilidade de quartos.
+Entregáveis
+Script SQL completo para criação e manipulação do banco de dados.
+Instruções claras para instalação e uso do banco de dados.
+Documentação para consultas exemplares e operações básicas.
+Avaliação
+O projeto será avaliado com base na clareza e organização do banco de dados, na eficácia das consultas SQL e na adequação das operações implementadas ao cenário proposto.
+
